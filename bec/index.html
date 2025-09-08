@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjalanan Validasi Pasar: Dari Ide ke Pasar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .phase-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .phase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            border: 4px solid #fff;
+            z-index: 1;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -21px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .gemini-card {
+            transition: box-shadow 0.3s ease;
+            background-color: white;
+        }
+        .gemini-card:focus-within {
+             box-shadow: 0 0 0 2px #3b82f6;
+        }
+        .gemini-output h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
+        }
+         .gemini-output ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        .gemini-output li {
+            margin-bottom: 0.25rem;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-600">Perjalanan Validasi Pasar</h1>
+            <p class="mt-4 text-lg text-gray-600">Dari Ide Mentah di Kepala Menjadi Konsep Bisnis Teruji Siap Meluncur!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- Introduction -->
+        <section class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-3xl font-bold mb-4">Sebuah Petualangan Entrepreneur</h2>
+            <p class="text-gray-600">
+                Mata kuliah ini bukan sekadar teori, melainkan sebuah simulasi nyata. Anda diajak untuk mengalami siklus lengkap seorang entrepreneur: melahirkan ide, mengujinya tanpa ampun di dunia nyata, belajar dari kegagalan, dan merayakan setiap pembelajaran untuk membangun bisnis yang lebih kuat dan relevan.
+            </p>
+        </section>
+
+        <!-- The 3 Phases Section -->
+        <section class="grid md:grid-cols-3 gap-10">
+            <!-- Phase 1 Card -->
+            <div class="phase-card bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <div class="text-5xl mb-4">💡</div>
+                <h3 class="text-2xl font-bold text-blue-600 mb-3">FASE 1: Fondasi & Perencanaan</h3>
+                <p class="text-gray-600 mb-6">Membangun dasar yang kokoh. Di sini, ide liar di kepala diubah menjadi konsep bisnis yang terstruktur dan didukung oleh data awal.</p>
+                <div class="space-y-4">
+                    <h4 class="font-semibold">Toolkit Utama:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li><strong>Value Proposition Canvas:</strong> Menjodohkan solusi dengan masalah pelanggan.</li>
+                        <li><strong>Market Sizing (TAM, SAM, SOM):</strong> Mengukur potensi "kolam" pasar.</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">Output Kunci:</h4>
+                    <p class="text-blue-600 font-bold">📝 Business Proposal</p>
+                </div>
+            </div>
+
+            <!-- Phase 2 Card -->
+            <div class="phase-card bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <div class="text-5xl mb-4">⚙️</div>
+                <h3 class="text-2xl font-bold text-green-600 mb-3">FASE 2: Eksekusi & Iterasi</h3>
+                <p class="text-gray-600 mb-6">Merakit "mesin" bisnis. Dari model, keuangan, hingga strategi pemasaran digital disiapkan untuk beroperasi dan diuji coba.</p>
+                <div class="space-y-4">
+                    <h4 class="font-semibold">Toolkit Utama:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li><strong>Business Model Canvas:</strong> Memetakan seluruh aspek bisnis dalam satu kanvas.</li>
+                        <li><strong>Digital Marketing Basics:</strong> Membangun kehadiran online pertama.</li>
+                        <li><strong>Financial Basics (BEP):</strong> Menghitung titik impas untuk tahu kapan profit dimulai.</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">Output Kunci:</h4>
+                    <p class="text-green-600 font-bold">🛠️ BMC Redevelopment</p>
+                </div>
+            </div>
+
+            <!-- Phase 3 Card -->
+            <div class="phase-card bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <div class="text-5xl mb-4">🏆</div>
+                <h3 class="text-2xl font-bold text-purple-600 mb-3">FASE 3: Uji Lapangan & Refleksi</h3>
+                <p class="text-gray-600 mb-6">Puncak dari perjalanan! Konsep diuji langsung di hadapan "juri" sesungguhnya, yaitu pelanggan, dan semua pembelajaran dirangkum.</p>
+                <div class="space-y-4">
+                    <h4 class="font-semibold">Toolkit Utama:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li><strong>Exhibition (Binus Festival):</strong> Validasi produk dan penjualan di dunia nyata.</li>
+                        <li><strong>Feedback Grid:</strong> Mengolah "harta karun" masukan dari pelanggan.</li>
+                        <li><strong>Pitch Deck:</strong> Mengemas cerita bisnis untuk meyakinkan audiens.</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">Output Kunci:</h4>
+                    <p class="text-purple-600 font-bold">📚 E-Catalogue & Final Report</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Journey Timeline -->
+        <section class="mt-24 max-w-4xl mx-auto">
+             <h2 class="text-3xl font-bold text-center mb-12">Alur Petualangan Entrepreneur</h2>
+            <div class="relative pl-10">
+                <div class="timeline-line"></div>
+                <div class="space-y-12">
+                    <div class="timeline-item relative">
+                        <h4 class="font-bold text-xl">1. Ideation & Research</h4>
+                        <p class="text-gray-600">Melahirkan ide, mengasahnya dengan VPC, dan mengukur potensi pasar dengan Market Sizing.</p>
+                    </div>
+                    <div class="timeline-item relative">
+                        <h4 class="font-bold text-xl">2. Business Modeling</h4>
+                        <p class="text-gray-600">Merangkai seluruh rencana dalam Business Proposal dan memetakannya di Business Model Canvas (BMC).</p>
+                    </div>
+                    <div class="timeline-item relative">
+                        <h4 class="font-bold text-xl">3. Preparation for Launch</h4>
+                        <p class="text-gray-600">Menyiapkan strategi Digital Marketing dan memahami dasar keuangan untuk memastikan bisnis siap beroperasi.</p>
+                    </div>
+                     <div class="timeline-item relative">
+                        <h4 class="font-bold text-xl">4. Real-World Validation</h4>
+                        <p class="text-gray-600">Terjun langsung ke pameran (Exhibition)! Menjual, berinteraksi, dan mengumpulkan feedback berharga dari pelanggan.</p>
+                    </div>
+                     <div class="timeline-item relative">
+                        <h4 class="font-bold text-xl">5. Analysis & Reflection</h4>
+                        <p class="text-gray-600">Mengolah masukan menggunakan Feedback Grid, mempresentasikan Pitch Deck, dan melakukan refleksi mendalam.</p>
+                    </div>
+                     <div class="timeline-item relative">
+                        <h4 class="font-bold text-xl">6. Final Showcase</h4>
+                        <p class="text-gray-600">Membukukan seluruh perjalanan dalam E-Catalogue sebagai portofolio akhir yang komprehensif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gemini API Features Section -->
+        <section class="mt-24">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Toolkit Cerdas ✨ Bertenaga AI</h2>
+                <p class="text-gray-600 mb-12">
+                    Percepat perjalanan validasi Anda dengan toolkit interaktif yang didukung oleh Gemini AI. Ubah ide dan data mentah menjadi wawasan yang siap ditindaklanjuti untuk setiap fase.
+                </p>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Phase 1 Toolkit Section -->
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-6 border-b-2 border-blue-200 pb-2">Toolkit Fase 1: Fondasi & Perencanaan</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- VPC Generator -->
+                        <div class="gemini-card p-6 rounded-xl shadow-lg border border-gray-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Generator Value Proposition Canvas (VPC)</h4>
+                            <p class="text-gray-600 mb-4">Jelaskan ide bisnis Anda, dan AI akan membantu memetakannya ke dalam VPC.</p>
+                            <textarea id="vpcInput" class="w-full p-3 border border-gray-300 rounded-md" rows="3" placeholder="Contoh: Jasa cuci sepatu premium khusus sneakers dengan layanan antar-jemput."></textarea>
+                            <button id="generateVpc" class="mt-4 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition">Buatkan Draf VPC</button>
+                            <div id="vpcLoader" class="hidden mx-auto mt-4 loader"></div>
+                            <div id="vpcOutput" class="mt-4 text-gray-700 gemini-output"></div>
+                        </div>
+                        <!-- Business Model Canvas Generator -->
+                        <div class="gemini-card p-6 rounded-xl shadow-lg border border-gray-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Generator Business Model Canvas (BMC)</h4>
+                            <p class="text-gray-600 mb-4">Dari ide singkat, AI akan membuat draf untuk ke-9 blok Business Model Canvas.</p>
+                            <textarea id="bmcInput" class="w-full p-3 border border-gray-300 rounded-md" rows="3" placeholder="Contoh: Platform marketplace untuk kerajinan tangan lokal dari seluruh Indonesia."></textarea>
+                            <button id="generateBmc" class="mt-4 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition">Buatkan Draf BMC</button>
+                            <div id="bmcLoader" class="hidden mx-auto mt-4 loader"></div>
+                            <div id="bmcOutput" class="mt-4 text-gray-700 gemini-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 Toolkit Section -->
+                <div>
+                    <h3 class="text-2xl font-bold text-green-600 mb-6 border-b-2 border-green-200 pb-2">Toolkit Fase 2: Eksekusi & Iterasi</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Social Media Content Idea Generator -->
+                        <div class="gemini-card p-6 rounded-xl shadow-lg border border-gray-200">
+                             <h4 class="text-xl font-bold text-gray-800 mb-2">Generator Ide Konten Media Sosial</h4>
+                            <p class="text-gray-600 mb-4">Butuh inspirasi postingan? AI akan memberikan ide konten untuk 7 hari ke depan.</p>
+                            <textarea id="socialInput" class="w-full p-3 border border-gray-300 rounded-md" rows="3" placeholder="Contoh: Bisnis: Kopi susu literan. Target: Pekerja kantoran WFH."></textarea>
+                            <button id="generateSocial" class="mt-4 w-full bg-green-600 text-white font-bold py-2 px-4 rounded-md hover:bg-green-700 transition">Berikan Ide Konten</button>
+                            <div id="socialLoader" class="hidden mx-auto mt-4 loader"></div>
+                            <div id="socialOutput" class="mt-4 text-gray-700 gemini-output"></div>
+                        </div>
+                        <!-- BEP Calculator -->
+                        <div class="gemini-card p-6 rounded-xl shadow-lg border border-gray-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Asisten Analisis Titik Impas (BEP)</h4>
+                            <p class="text-gray-600 mb-4">Hitung BEP Anda dan dapatkan saran dari AI untuk mencapainya lebih cepat.</p>
+                            <div class="grid grid-cols-3 gap-2 text-sm">
+                                <input type="number" id="fixedCosts" placeholder="Total Biaya Tetap" class="p-2 border rounded">
+                                <input type="number" id="variableCost" placeholder="Biaya Variabel/Unit" class="p-2 border rounded">
+                                <input type="number" id="price" placeholder="Harga Jual/Unit" class="p-2 border rounded">
+                            </div>
+                            <button id="analyzeBep" class="mt-4 w-full bg-green-600 text-white font-bold py-2 px-4 rounded-md hover:bg-green-700 transition">Hitung & Beri Saran</button>
+                            <div id="bepLoader" class="hidden mx-auto mt-4 loader"></div>
+                            <div id="bepOutput" class="mt-4 text-gray-700 gemini-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 Toolkit Section -->
+                 <div>
+                    <h3 class="text-2xl font-bold text-purple-600 mb-6 border-b-2 border-purple-200 pb-2">Toolkit Fase 3: Uji Lapangan & Refleksi</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                       <!-- Pitch Deck Assistant -->
+                        <div class="gemini-card p-6 rounded-xl shadow-lg border border-gray-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Asisten Pitch Deck</h4>
+                            <p class="text-gray-600 mb-4">AI akan membantu menyusun draf poin-poin kunci untuk 12 slide Pitch Deck yang meyakinkan.</p>
+                            <textarea id="pitchDeckInput" class="w-full p-3 border border-gray-300 rounded-md" rows="3" placeholder="Contoh: Sebuah aplikasi katering makanan sehat untuk mahasiswa sibuk..."></textarea>
+                            <button id="generatePitchDeck" class="mt-4 w-full bg-purple-600 text-white font-bold py-2 px-4 rounded-md hover:bg-purple-700 transition">Buatkan Draf Pitch Deck</button>
+                            <div id="pitchDeckLoader" class="hidden mx-auto mt-4 loader"></div>
+                            <div id="pitchDeckOutput" class="mt-4 text-gray-700 gemini-output"></div>
+                        </div>
+                        <!-- Feedback Analyzer -->
+                        <div class="gemini-card p-6 rounded-xl shadow-lg border border-gray-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Penganalisis Umpan Balik</h4>
+                            <p class="text-gray-600 mb-4">Tempelkan umpan balik mentah dari pelanggan, AI akan mengelompokkannya ke dalam Feedback Grid.</p>
+                            <textarea id="feedbackInput" class="w-full p-3 border border-gray-300 rounded-md" rows="3" placeholder="Contoh: 'Kemasannya lucu!', 'Seandainya porsinya lebih banyak ya' ..."></textarea>
+                            <button id="analyzeFeedback" class="mt-4 w-full bg-purple-600 text-white font-bold py-2 px-4 rounded-md hover:bg-purple-700 transition">Analisis Feedback</button>
+                            <div id="feedbackLoader" class="hidden mx-auto mt-4 loader"></div>
+                            <div id="feedbackOutput" class="mt-4 text-gray-700 gemini-output"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Key Takeaway -->
+        <section class="mt-24 text-center bg-blue-600 text-white rounded-xl p-12 max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Pelajaran Paling Berharga</h2>
+             <p class="text-xl max-w-3xl mx-auto">
+                "Validasi pasar mengajarkan kita bahwa bisnis terbaik tidak lahir dari ide yang sempurna, melainkan dari keberanian untuk **mendengarkan**, kerendahan hati untuk **belajar**, dan kecepatan untuk **beradaptasi**."
+             </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 bg-white mt-16 border-t">
+        <p class="text-gray-500">Ringkasan Mata Kuliah Entrepreneurship: Market Validation</p>
+    </footer>
+
+    <script>
+        const apiKey = ""; // API Key tidak diperlukan jika menggunakan model default
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        function formatOutput(text) {
+             return text
+                .replace(/\*\*(.*?)\*\*/g, '<h3>$1</h3>') 
+                .replace(/\*/g, '<li>')
+                .replace(/\n/g, '<br>');
+        }
+        
+        async function callGemini(prompt, button, loader, output, append = false) {
+            if (typeof prompt === 'string' && !prompt.trim()) {
+                output.innerHTML = '<p class="text-red-500">Mohon masukkan teks terlebih dahulu.</p>';
+                return;
+            }
+
+            button.disabled = true;
+            loader.classList.remove('hidden');
+            if (!append) {
+                output.innerHTML = '';
+            }
+
+            try {
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }],
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    if (append) {
+                         output.innerHTML += formatOutput(candidate.content.parts[0].text);
+                    } else {
+                        output.innerHTML = formatOutput(candidate.content.parts[0].text);
+                    }
+                } else {
+                     output.innerHTML = '<p class="text-red-500">Maaf, terjadi kesalahan saat menghasilkan respons. Silakan coba lagi.</p>';
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                output.innerHTML = `<p class="text-red-500">Terjadi kesalahan: ${error.message}. Coba lagi nanti.</p>`;
+            } finally {
+                button.disabled = false;
+                loader.classList.add('hidden');
+            }
+        }
+
+        // --- Event Listeners for All Tools ---
+        
+        // VPC Generator
+        const vpcButton = document.getElementById('generateVpc');
+        vpcButton.addEventListener('click', () => {
+            const userInput = document.getElementById('vpcInput').value;
+            const prompt = `Anda adalah seorang business strategist. Untuk ide bisnis berikut: "${userInput}", buatkan draf Value Proposition Canvas (VPC). Buat daftar terpisah untuk sisi Pelanggan (Customer Jobs, Pains, Gains) dan sisi Produk (Products & Services, Pain Relievers, Gain Creators).`;
+            callGemini(prompt, vpcButton, document.getElementById('vpcLoader'), document.getElementById('vpcOutput'));
+        });
+
+        // BMC Generator
+        const bmcButton = document.getElementById('generateBmc');
+        bmcButton.addEventListener('click', () => {
+            const userInput = document.getElementById('bmcInput').value;
+            const prompt = `Anda adalah seorang konsultan startup. Berdasarkan ide bisnis: "${userInput}", buatkan draf Business Model Canvas (BMC). Isi ke-9 bloknya: Customer Segments, Value Propositions, Channels, Customer Relationships, Revenue Streams, Key Activities, Key Resources, Key Partners, dan Cost Structure.`;
+            callGemini(prompt, bmcButton, document.getElementById('bmcLoader'), document.getElementById('bmcOutput'));
+        });
+
+        // Social Media Content Generator
+        const socialButton = document.getElementById('generateSocial');
+        socialButton.addEventListener('click', () => {
+            const userInput = document.getElementById('socialInput').value;
+            const prompt = `Anda adalah seorang social media manager. Untuk bisnis berikut: "${userInput}", buatkan ide konten media sosial untuk 7 hari ke depan. Untuk setiap hari, berikan tema atau jenis konten (misal: Edukasi, Testimoni, Behind the Scene) dan satu contoh caption singkat.`;
+            callGemini(prompt, socialButton, document.getElementById('socialLoader'), document.getElementById('socialOutput'));
+        });
+        
+        // BEP Analyzer
+        const bepButton = document.getElementById('analyzeBep');
+        bepButton.addEventListener('click', () => {
+            const fixedCosts = parseFloat(document.getElementById('fixedCosts').value);
+            const variableCost = parseFloat(document.getElementById('variableCost').value);
+            const price = parseFloat(document.getElementById('price').value);
+            const outputDiv = document.getElementById('bepOutput');
+
+            if (isNaN(fixedCosts) || isNaN(variableCost) || isNaN(price)) {
+                outputDiv.innerHTML = '<p class="text-red-500">Harap isi semua kolom biaya dengan angka.</p>';
+                return;
+            }
+            if (price <= variableCost) {
+                outputDiv.innerHTML = '<p class="text-red-500">Harga Jual harus lebih besar dari Biaya Variabel.</p>';
+                return;
+            }
+
+            const bep = Math.ceil(fixedCosts / (price - variableCost));
+            const bepRevenue = bep * price;
+            
+            let resultHTML = `<h3>Hasil Analisis Titik Impas (BEP)</h3>
+            <p>Anda perlu menjual <strong>${bep.toLocaleString('id-ID')} unit</strong> untuk mencapai titik impas.</p>
+            <p>Ini setara dengan pendapatan sebesar <strong>Rp ${bepRevenue.toLocaleString('id-ID')}</strong>.</p><br>`;
+            
+            outputDiv.innerHTML = resultHTML;
+
+            const prompt = `Sebuah bisnis memiliki Biaya Tetap ${fixedCosts}, Biaya Variabel per unit ${variableCost}, dan Harga Jual per unit ${price}. Titik impasnya adalah ${bep} unit. Sebagai seorang penasihat bisnis, berikan 3 saran strategis dan actionable untuk menurunkan titik impas (BEP) tersebut.`;
+            callGemini(prompt, bepButton, document.getElementById('bepLoader'), outputDiv, true); // Appends to the output
+        });
+
+
+        // Pitch Deck Assistant
+        const pitchDeckButton = document.getElementById('generatePitchDeck');
+        pitchDeckButton.addEventListener('click', () => {
+            const userInput = document.getElementById('pitchDeckInput').value;
+            const prompt = `Anda adalah seorang mentor startup berpengalaman. Berdasarkan ide bisnis berikut: "${userInput}", buatkan draf poin-poin kunci untuk sebuah pitch deck 12-slide. Gunakan format berikut untuk setiap slide: **Nama Slide:** *Poin 1 *Poin 2. Slide yang harus ada adalah: Company Purpose, Problem, Solution, Why Now, Market Size, Competition, Product, Business Model, Team, dan Financial.`;
+            callGemini(prompt, pitchDeckButton, document.getElementById('pitchDeckLoader'), document.getElementById('pitchDeckOutput'));
+        });
+
+        // Feedback Analyzer
+        const feedbackButton = document.getElementById('analyzeFeedback');
+        feedbackButton.addEventListener('click', () => {
+            const userInput = document.getElementById('feedbackInput').value;
+            const prompt = `Anda adalah seorang analis riset pasar yang cerdas. Analisis dan kelompokkan kumpulan umpan balik pelanggan mentah berikut ke dalam empat kategori Feedback Grid: **👍 Hal yang Disukai**, **🙏 Kritik & Saran**, **❓ Pertanyaan**, dan **💡 Ide Baru**. Sajikan hasilnya dalam format daftar poin yang jelas untuk setiap kategori. Berikut adalah umpan baliknya: "${userInput}"`;
+            callGemini(prompt, feedbackButton, document.getElementById('feedbackLoader'), document.getElementById('feedbackOutput'));
+        });
+    </script>
+
+</body>
+</html>
